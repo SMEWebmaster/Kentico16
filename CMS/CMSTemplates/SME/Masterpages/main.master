@@ -1,0 +1,193 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="main.master.cs" Inherits="CMSTemplates_SME_Masterpages_main" ClientIDMode="static" %>
+
+
+<%@ Register Src="~/CMSWebParts/Viewers/Documents/cmsuniview.ascx" TagPrefix="uc1" TagName="cmsuniview" %>
+<%@ Register Src="~/CMSWebParts/Viewers/Documents/cmsrepeater.ascx" TagPrefix="uc1" TagName="cmsrepeater" %>
+<%@ Register Src="~/CMSTemplates/SME/control/shoppingcartguid.ascx" TagPrefix="uc1" TagName="shoppingcartguid" %>
+
+
+
+
+<!DOCTYPE html>
+
+<%=DocType%>
+<html class="no-js" lang="en-us" ng-app="atsApp">
+<head id="Head1" runat="server">
+    <title id="Title" runat="server">Mining Metallurgy and Exploration - SME</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-control" content="public">
+    <meta name="viewport" content="width=device-width">
+    <link href="/CMSPages/GetResource.ashx?stylesheetname=SME-Styles" type="text/css" rel="stylesheet" />
+    <link href="/CMSPages/GetResource.ashx?stylesheetname=personify" type="text/css" rel="stylesheet" />
+    <asp:Literal runat="server" ID="ltlHeaderTags" EnableViewState="false" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body class="<%=BodyClass%> LTR EditMode Safari Chrome Safari40 Chrome40 ENUS ContentBody" <%=BodyParameters%> ng-controller="MasterCtrl">
+    <form id="form1" runat="server">
+        <ajaxtoolkit:toolkitscriptmanager id="manScript" runat="server"
+            enableviewstate="false" scriptmode="Release" />
+        <cms:cmsportalmanager id="CMSPortalManager1" runat="server"
+            enableviewstate="false" />
+
+        <!-- Start Heder  -->
+        <div class="container">
+            <header>
+
+
+                <div class="logo">
+                    <a href="/">
+                        <img id="p_lt_WebPartZone1_ZoneLogo_eiLogo_ucEditableImage_imgImage" src="/SME/media/SME/Logo.png?width=382&amp;height=112&amp;ext=.png" alt="">
+                    </a>
+                </div>
+                <div class="utilities">
+                    <ul class="uti-nav">
+                        <uc1:shoppingcartguid runat="server" id="shoppingcartguid" />
+                        <uc1:cmsrepeater runat="server" id="ZoneUtilitiesMenu" transformationname="SME.MenuItem.xUtilities"
+                            classnames="SME.MenuItem" path="/%" wherecondition="MenuItemGroup LIKE '%Top%'"
+                            orderby="NodeLevel, NodeOrder, NodeName"
+                            checkpermission="false" enableviewstate="false" selectonlypublished="true" cacheminutes="90" />
+                    </ul>
+                    <div class="search">
+                        <a href="/PageLayoutTwoColRightViewer.aspx?pageid=250">
+                            <div style="float: right; display: none;">
+                                <i class="fa fa-shopping-cart"></i>
+                                <asp:Label runat="server" ID="itemcount">
+                                                                                               
+                                </asp:Label>
+                            </div>
+                        </a>
+                        <div>
+                            <gcse:searchbox-only resultsurl="/specialpages/searchresults.aspx" queryparametername="q"></gcse:searchbox-only>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <!-- End Header -->
+        <!-- Mega menu start here -->
+        <div class="topnav-container">
+            <div class="menu_container cf">
+                <a id="menu-toggle" class="anchor-link" href="#mobile-nav">
+                    <img src="/SME/media/SME/main-dropmenu.png" onerror="this.onerror=null; this.src='main-dropmenu.png'"><span>MENU</span></a>
+            </div>
+            <nav class="nav cf" id="mobile-nav" role="navigation">
+                <ul>
+
+                    <uc1:cmsuniview runat="server" id="ZoneMegamenu"
+                        path="/%" loadhierarchicaldata="true" classnames="SME.MenuItem"
+                        hierarchicaltransformationname="SME.MenuItem.xMegaMenu"
+                        wherecondition="MenuItemGroup Like '%Left%'"
+                        checkpermissions="false" enableviewstate="false" cacheminutes="90" />
+
+                    <uc1:cmsrepeater runat="server" id="ZoneMobileMenu"
+                        path="/%" loadhierarchicaldata="true" classnames="SME.MenuItem"
+                        hierarchicaltransformationname="SME.SMEMobileView.xMobileView"
+                        wherecondition="MenuItemGroup LIKE '%Mobile%'"
+                        checkpermissions="false" enableviewstate="false" cacheminutes="90" />
+                </ul>
+            </nav>
+        </div>
+        <!-- Mega menu end here -->
+
+        <section>
+            <div class="page-header cf">
+                <div class="header-container">
+                    <h1 class="article">
+                        <asp:Literal ID="littile" runat="Server" /></h1>
+
+                    <div class="ad">
+                    </div>
+                    <ul class="crumbs">
+                        <a href="/Home.aspx">Home</a>
+
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="article-page-content">
+                <div class="grid_2" style="display:none;">
+                    <div class="menu">
+
+
+                        <uc1:cmsuniview runat="server" id="cmLeftNav"
+                            path="/Personify/%" loadhierarchicaldata="true"
+                            hierarchicaltransformationname="SME.MenuItem.xLeftMenuHv_Personifypages"
+                            checkpermissions="false" enableviewstate="false" />
+
+                    </div>
+                </div>
+
+                <div class="grid_12">
+
+
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                <div class="footer">
+                    <div class="grid_3">
+
+                        <uc1:cmsuniview runat="server" id="rptContactUs"
+                            path="/ContactUs/FooterContactUs/%" classnames="CMS.Office"
+                            transformationname="CMS.Office.xContactUs"
+                            columns="OfficeName,OfficeAddress1,OfficeAddress2,OfficePhone,OfficeFax,OfficeEmail"
+                            checkpermissions="false" enableviewstate="false" cacheminutes="90" />
+                    </div>
+
+                    <div class="grid_4">
+
+                        <uc1:cmsuniview runat="server" id="ZoneMedia"
+                            path="/ContactUs/FooterContactUs/%" classnames="CMS.Office"
+                            transformationname="SME.SMEConnectWithUs.xConnectwithUs"
+                            checkpermissions="false" enableviewstate="false" cacheminutes="90" />
+                        <p class="center">
+                            <h3>Connect with Us</h3>
+                            <p>Connect with us via our social media platforms to see all of our latest updates!</p>
+                            <uc1:cmsrepeater runat="server" id="rptConnectwithUs"
+                                path="/ConnectwithUs/%" classnames="SME.SMEConnectWithUs"
+                                hierarchicaltransformationname="CMS.Office.xContactUs"
+                                checkpermissions="false" enableviewstate="false" cacheminutes="90" />
+                        </p>
+                    </div>
+                    <div class="grid_4">
+                        <div class="copyright">
+                            <%-- {^WebPartZone|(id)ZoneCopyRight^}--%>
+                          
+          ©2015 SME All Rights Reserved. SME is a member society of <a href="http://www.onemine.org/" target="blank">OneMine</a> , the <a href="http://community.smenet.org/SMEFoundation/Home/" target="blank">SME Foundation</a> , and the <a href="http://www.aimehq.org/" target="blank">American Institute of Mining, Metallurgical, and Petroleum Engineers (AIME)</a> .
+  
+                        </div>
+
+                        <uc1:cmsuniview runat="server" id="hvFooterMenu"
+                            path="/%" loadhierarchicaldata="true" classnames="SME.MenuItem"
+                            hierarchicaltransformationname="SME.MenuItem.xFooterMenu"
+                            wherecondition="MenuItemGroup LIKE '%Footer%'"
+                            checkpermissions="false" enableviewstate="false" cacheminutes="90" />
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container2">
+            </div>
+        </footer>
+        <script>
+            $(document).ready(function () {
+                $(".menu > .leftnav > li").each(function () {
+                    if ($(this).children('ul').length > 0) {
+                        $(this).addClass("has-children");
+                        var overviewPage = '<li><a href="' + $(this).find('> a').attr('href') + '">Overview</a></li>';
+                        $(this).find('> ul').prepend(overviewPage);
+                    }
+                });
+            });
+        </script>
+
+    </form>
+</body>
+</html>

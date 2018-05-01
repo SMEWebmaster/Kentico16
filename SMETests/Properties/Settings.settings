@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SMETests.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SMETests_com_personifycloud_smemitst_service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://smemitst.personifycloud.com/SSO/webservice/service.asmx</Value>
+    </Setting>
+    <Setting Name="SMETests_com_personifycloud_smemitst1_IMService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://smemitst.personifycloud.com/IMS/IMService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://TIMSSSSO/imswebservice/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://TIMSSSSO/imswebservice/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://TIMSSSSO/imswebservice/">
+      <s:element name="IMSCustomerRoleGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IMSCustomerRoleGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IMSCustomerRoleGetResult" type="tns:IMSCustomerRoleGetResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IMSCustomerRoleGetResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerRoles" type="tns:ArrayOfRole" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRole">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Role" type="tns:Role" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Role">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IMSCustomerRoleGetByTimssCustomerId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TimssCustomerId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IMSCustomerRoleGetByTimssCustomerIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IMSCustomerRoleGetByTimssCustomerIdResult" type="tns:IMSCustomerRoleGetResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IMSRoleCustomersGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RoleId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IMSRoleCustomersGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IMSRoleCustomersGetResult" type="tns:IMSRoleCustomersGetResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IMSRoleCustomersGetResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RoleCustomers" type="tns:ArrayOfRoleCustomer" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRoleCustomer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RoleCustomer" type="tns:RoleCustomer" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RoleCustomer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RoleId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimssCustomerId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SearchName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IMSVendorRolesGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IMSVendorRolesGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IMSVendorRolesGetResult" type="tns:IMSVendorRolesGetResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IMSVendorRolesGetResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="VendorRoles" type="tns:ArrayOfVendorRole" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfVendorRole">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VendorRole" type="tns:VendorRole" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VendorRole">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RoleId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RoleDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IMSCustomerWebRoleGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IMSCustomerWebRoleGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IMSCustomerWebRoleGetResult" type="tns:IMSCustomerRoleGetResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IMSVendorWebRolesGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IMSVendorWebRolesGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IMSVendorWebRolesGetResult" type="tns:IMSVendorRolesGetResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IMSCustomerRoleGetResult" nillable="true" type="tns:IMSCustomerRoleGetResult" />
+      <s:element name="IMSRoleCustomersGetResult" nillable="true" type="tns:IMSRoleCustomersGetResult" />
+      <s:element name="IMSVendorRolesGetResult" nillable="true" type="tns:IMSVendorRolesGetResult" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IMSCustomerRoleGetSoapIn">
+    <wsdl:part name="parameters" element="tns:IMSCustomerRoleGet" />
+  </wsdl:message>
+  <wsdl:message name="IMSCustomerRoleGetSoapOut">
+    <wsdl:part name="parameters" element="tns:IMSCustomerRoleGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSCustomerRoleGetByTimssCustomerIdSoapIn">
+    <wsdl:part name="parameters" element="tns:IMSCustomerRoleGetByTimssCustomerId" />
+  </wsdl:message>
+  <wsdl:message name="IMSCustomerRoleGetByTimssCustomerIdSoapOut">
+    <wsdl:part name="parameters" element="tns:IMSCustomerRoleGetByTimssCustomerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSRoleCustomersGetSoapIn">
+    <wsdl:part name="parameters" element="tns:IMSRoleCustomersGet" />
+  </wsdl:message>
+  <wsdl:message name="IMSRoleCustomersGetSoapOut">
+    <wsdl:part name="parameters" element="tns:IMSRoleCustomersGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSVendorRolesGetSoapIn">
+    <wsdl:part name="parameters" element="tns:IMSVendorRolesGet" />
+  </wsdl:message>
+  <wsdl:message name="IMSVendorRolesGetSoapOut">
+    <wsdl:part name="parameters" element="tns:IMSVendorRolesGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSCustomerWebRoleGetSoapIn">
+    <wsdl:part name="parameters" element="tns:IMSCustomerWebRoleGet" />
+  </wsdl:message>
+  <wsdl:message name="IMSCustomerWebRoleGetSoapOut">
+    <wsdl:part name="parameters" element="tns:IMSCustomerWebRoleGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSVendorWebRolesGetSoapIn">
+    <wsdl:part name="parameters" element="tns:IMSVendorWebRolesGet" />
+  </wsdl:message>
+  <wsdl:message name="IMSVendorWebRolesGetSoapOut">
+    <wsdl:part name="parameters" element="tns:IMSVendorWebRolesGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSCustomerRoleGetHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="customerToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IMSCustomerRoleGetHttpGetOut">
+    <wsdl:part name="Body" element="tns:IMSCustomerRoleGetResult" />
+  </wsdl:message>
+  <wsdl:message name="IMSCustomerRoleGetByTimssCustomerIdHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="TimssCustomerId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IMSCustomerRoleGetByTimssCustomerIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:IMSCustomerRoleGetResult" />
+  </wsdl:message>
+  <wsdl:message name="IMSRoleCustomersGetHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="RoleId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IMSRoleCustomersGetHttpGetOut">
+    <wsdl:part name="Body" element="tns:IMSRoleCustomersGetResult" />
+  </wsdl:message>
+  <wsdl:message name="IMSVendorRolesGetHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IMSVendorRolesGetHttpGetOut">
+    <wsdl:part name="Body" element="tns:IMSVendorRolesGetResult" />
+  </wsdl:message>
+  <wsdl:message name="IMSCustomerWebRoleGetHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="customerToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IMSCustomerWebRoleGetHttpGetOut">
+    <wsdl:part name="Body" element="tns:IMSCustomerRoleGetResult" />
+  </wsdl:message>
+  <wsdl:message name="IMSVendorWebRolesGetHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IMSVendorWebRolesGetHttpGetOut">
+    <wsdl:part name="Body" element="tns:IMSVendorRolesGetResult" />
+  </wsdl:message>
+  <wsdl:message name="IMSCustomerRoleGetHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="customerToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IMSCustomerRoleGetHttpPostOut">
+    <wsdl:part name="Body" element="tns:IMSCustomerRoleGetResult" />
+  </wsdl:message>
+  <wsdl:message name="IMSCustomerRoleGetByTimssCustomerIdHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="TimssCustomerId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IMSCustomerRoleGetByTimssCustomerIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:IMSCustomerRoleGetResult" />
+  </wsdl:message>
+  <wsdl:message name="IMSRoleCustomersGetHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="RoleId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IMSRoleCustomersGetHttpPostOut">
+    <wsdl:part name="Body" element="tns:IMSRoleCustomersGetResult" />
+  </wsdl:message>
+  <wsdl:message name="IMSVendorRolesGetHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IMSVendorRolesGetHttpPostOut">
+    <wsdl:part name="Body" element="tns:IMSVendorRolesGetResult" />
+  </wsdl:message>
+  <wsdl:message name="IMSCustomerWebRoleGetHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="customerToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IMSCustomerWebRoleGetHttpPostOut">
+    <wsdl:part name="Body" element="tns:IMSCustomerRoleGetResult" />
+  </wsdl:message>
+  <wsdl:message name="IMSVendorWebRolesGetHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IMSVendorWebRolesGetHttpPostOut">
+    <wsdl:part name="Body" element="tns:IMSVendorRolesGetResult" />
+  </wsdl:message>
+  <wsdl:portType name="IMServiceSoap">
+    <wsdl:operation name="IMSCustomerRoleGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This WS allows vendors to see which roles a customer belongs to. Only roles that vendor is authorized to see will be returned.</wsdl:documentation>
+      <wsdl:input message="tns:IMSCustomerRoleGetSoapIn" />
+      <wsdl:output message="tns:IMSCustomerRoleGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IMSCustomerRoleGetByTimssCustomerId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This WS allows vendors to see which roles a customer belongs to. Only roles that vendor is authorized to see will be returned.</wsdl:documentation>
+      <wsdl:input message="tns:IMSCustomerRoleGetByTimssCustomerIdSoapIn" />
+      <wsdl:output message="tns:IMSCustomerRoleGetByTimssCustomerIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IMSRoleCustomersGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This WS allows vendors to get all customers who belong to a specific role.</wsdl:documentation>
+      <wsdl:input message="tns:IMSRoleCustomersGetSoapIn" />
+      <wsdl:output message="tns:IMSRoleCustomersGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IMSVendorRolesGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This WS allows vendors to retrieve definitions for all the roles they have access to.</wsdl:documentation>
+      <wsdl:input message="tns:IMSVendorRolesGetSoapIn" />
+      <wsdl:output message="tns:IMSVendorRolesGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IMSCustomerWebRoleGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This WS allows vendors to see which roles a customer belongs to. Only web roles that vendor is authorized to see will be returned.</wsdl:documentation>
+      <wsdl:input message="tns:IMSCustomerWebRoleGetSoapIn" />
+      <wsdl:output message="tns:IMSCustomerWebRoleGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IMSVendorWebRolesGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This WS allows vendors to retrieve definitions for all the web enabled roles they have access to.</wsdl:documentation>
+      <wsdl:input message="tns:IMSVendorWebRolesGetSoapIn" />
+      <wsdl:output message="tns:IMSVendorWebRolesGetSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IMServiceHttpGet">
+    <wsdl:operation name="IMSCustomerRoleGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This WS allows vendors to see which roles a customer belongs to. Only roles that vendor is authorized to see will be returned.</wsdl:documentation>
+      <wsdl:input message="tns:IMSCustomerRoleGetHttpGetIn" />
+      <wsdl:output message="tns:IMSCustomerRoleGetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IMSCustomerRoleGetByTimssCustomerId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This WS allows vendors to see which roles a customer belongs to. Only roles that vendor is authorized to see will be returned.</wsdl:documentation>
+      <wsdl:input message="tns:IMSCustomerRoleGetByTimssCustomerIdHttpGetIn" />
+      <wsdl:output message="tns:IMSCustomerRoleGetByTimssCustomerIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IMSRoleCustomersGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This WS allows vendors to get all customers who belong to a specific role.</wsdl:documentation>
+      <wsdl:input message="tns:IMSRoleCustomersGetHttpGetIn" />
+      <wsdl:output message="tns:IMSRoleCustomersGetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IMSVendorRolesGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This WS allows vendors to retrieve definitions for all the roles they have access to.</wsdl:documentation>
+      <wsdl:input message="tns:IMSVendorRolesGetHttpGetIn" />
+      <wsdl:output message="tns:IMSVendorRolesGetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IMSCustomerWebRoleGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This WS allows vendors to see which roles a customer belongs to. Only web roles that vendor is authorized to see will be returned.</wsdl:documentation>
+      <wsdl:input message="tns:IMSCustomerWebRoleGetHttpGetIn" />
+      <wsdl:output message="tns:IMSCustomerWebRoleGetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IMSVendorWebRolesGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This WS allows vendors to retrieve definitions for all the web enabled roles they have access to.</wsdl:documentation>
+      <wsdl:input message="tns:IMSVendorWebRolesGetHttpGetIn" />
+      <wsdl:output message="tns:IMSVendorWebRolesGetHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IMServiceHttpPost">
+    <wsdl:operation name="IMSCustomerRoleGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This WS allows vendors to see which roles a customer belongs to. Only roles that vendor is authorized to see will be returned.</wsdl:documentation>
+      <wsdl:input message="tns:IMSCustomerRoleGetHttpPostIn" />
+      <wsdl:output message="tns:IMSCustomerRoleGetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IMSCustomerRoleGetByTimssCustomerId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This WS allows vendors to see which roles a customer belongs to. Only roles that vendor is authorized to see will be returned.</wsdl:documentation>
+      <wsdl:input message="tns:IMSCustomerRoleGetByTimssCustomerIdHttpPostIn" />
+      <wsdl:output message="tns:IMSCustomerRoleGetByTimssCustomerIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IMSRoleCustomersGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This WS allows vendors to get all customers who belong to a specific role.</wsdl:documentation>
+      <wsdl:input message="tns:IMSRoleCustomersGetHttpPostIn" />
+      <wsdl:output message="tns:IMSRoleCustomersGetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IMSVendorRolesGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This WS allows vendors to retrieve definitions for all the roles they have access to.</wsdl:documentation>
+      <wsdl:input message="tns:IMSVendorRolesGetHttpPostIn" />
+      <wsdl:output message="tns:IMSVendorRolesGetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IMSCustomerWebRoleGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This WS allows vendors to see which roles a customer belongs to. Only web roles that vendor is authorized to see will be returned.</wsdl:documentation>
+      <wsdl:input message="tns:IMSCustomerWebRoleGetHttpPostIn" />
+      <wsdl:output message="tns:IMSCustomerWebRoleGetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IMSVendorWebRolesGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This WS allows vendors to retrieve definitions for all the web enabled roles they have access to.</wsdl:documentation>
+      <wsdl:input message="tns:IMSVendorWebRolesGetHttpPostIn" />
+      <wsdl:output message="tns:IMSVendorWebRolesGetHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IMServiceSoap" type="tns:IMServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IMSCustomerRoleGet">
+      <soap:operation soapAction="http://TIMSSSSO/imswebservice/IMSCustomerRoleGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IMSCustomerRoleGetByTimssCustomerId">
+      <soap:operation soapAction="http://TIMSSSSO/imswebservice/IMSCustomerRoleGetByTimssCustomerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IMSRoleCustomersGet">
+      <soap:operation soapAction="http://TIMSSSSO/imswebservice/IMSRoleCustomersGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IMSVendorRolesGet">
+      <soap:operation soapAction="http://TIMSSSSO/imswebservice/IMSVendorRolesGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IMSCustomerWebRoleGet">
+      <soap:operation soapAction="http://TIMSSSSO/imswebservice/IMSCustomerWebRoleGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IMSVendorWebRolesGet">
+      <soap:operation soapAction="http://TIMSSSSO/imswebservice/IMSVendorWebRolesGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IMServiceSoap12" type="tns:IMServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IMSCustomerRoleGet">
+      <soap12:operation soapAction="http://TIMSSSSO/imswebservice/IMSCustomerRoleGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IMSCustomerRoleGetByTimssCustomerId">
+      <soap12:operation soapAction="http://TIMSSSSO/imswebservice/IMSCustomerRoleGetByTimssCustomerId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IMSRoleCustomersGet">
+      <soap12:operation soapAction="http://TIMSSSSO/imswebservice/IMSRoleCustomersGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IMSVendorRolesGet">
+      <soap12:operation soapAction="http://TIMSSSSO/imswebservice/IMSVendorRolesGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IMSCustomerWebRoleGet">
+      <soap12:operation soapAction="http://TIMSSSSO/imswebservice/IMSCustomerWebRoleGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IMSVendorWebRolesGet">
+      <soap12:operation soapAction="http://TIMSSSSO/imswebservice/IMSVendorWebRolesGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IMServiceHttpGet" type="tns:IMServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="IMSCustomerRoleGet">
+      <http:operation location="/IMSCustomerRoleGet" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IMSCustomerRoleGetByTimssCustomerId">
+      <http:operation location="/IMSCustomerRoleGetByTimssCustomerId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IMSRoleCustomersGet">
+      <http:operation location="/IMSRoleCustomersGet" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IMSVendorRolesGet">
+      <http:operation location="/IMSVendorRolesGet" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IMSCustomerWebRoleGet">
+      <http:operation location="/IMSCustomerWebRoleGet" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IMSVendorWebRolesGet">
+      <http:operation location="/IMSVendorWebRolesGet" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IMServiceHttpPost" type="tns:IMServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="IMSCustomerRoleGet">
+      <http:operation location="/IMSCustomerRoleGet" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IMSCustomerRoleGetByTimssCustomerId">
+      <http:operation location="/IMSCustomerRoleGetByTimssCustomerId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IMSRoleCustomersGet">
+      <http:operation location="/IMSRoleCustomersGet" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IMSVendorRolesGet">
+      <http:operation location="/IMSVendorRolesGet" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IMSCustomerWebRoleGet">
+      <http:operation location="/IMSCustomerWebRoleGet" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IMSVendorWebRolesGet">
+      <http:operation location="/IMSVendorWebRolesGet" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IMService">
+    <wsdl:port name="IMServiceSoap" binding="tns:IMServiceSoap">
+      <soap:address location="http://smemi.personifycloud.com/IMS/IMService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IMServiceSoap12" binding="tns:IMServiceSoap12">
+      <soap12:address location="http://smemi.personifycloud.com/IMS/IMService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IMServiceHttpGet" binding="tns:IMServiceHttpGet">
+      <http:address location="http://smemi.personifycloud.com/IMS/IMService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IMServiceHttpPost" binding="tns:IMServiceHttpPost">
+      <http:address location="http://smemi.personifycloud.com/IMS/IMService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

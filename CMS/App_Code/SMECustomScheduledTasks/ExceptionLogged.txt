@@ -1,0 +1,11 @@
+Message :Column 'ProductId' does not belong to table Table.
+StackTrace :   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at PersonifyMeetings.SMEPersonifyMeetingsTask.<>c__DisplayClassa.<DocumentExists>b__8(DataRow row) in c:\websites\staging.smenet.org\web\App_Code\SMECustomScheduledTasks\SMEPersonifyMeetingsTask.cs:line 216
+   at System.Linq.Enumerable.Any[TSource](IEnumerable`1 source, Func`2 predicate)
+   at PersonifyMeetings.SMEPersonifyMeetingsTask.DocumentExists(Int64 id, DataSet eventDocuments) in c:\websites\staging.smenet.org\web\App_Code\SMECustomScheduledTasks\SMEPersonifyMeetingsTask.cs:line 216
+   at PersonifyMeetings.SMEPersonifyMeetingsTask.Execute(TaskInfo ti) in c:\websites\staging.smenet.org\web\App_Code\SMECustomScheduledTasks\SMEPersonifyMeetingsTask.cs:line 100
+Date :7/21/2015 1:57:26 PM
+
+-----------------------------------------------------------------------------
+

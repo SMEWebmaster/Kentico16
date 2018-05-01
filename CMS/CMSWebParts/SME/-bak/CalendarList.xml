@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grid>
+  <columns>
+    <column source="StartDate" caption="Dates" externalsourcename="#customDateFormat" />
+    <column source="##ALL##" caption="Event" externalsourcename="namelink" sort="StartDate" wrap="true" cssclass=""/>
+    <column source="EventCategory" caption="Event Type" wrap="true" externalsourcename="#customEvent" cssclass=""/>
+    <column source="EventLocation" caption="Location" externalsourcename="#html"/>
+
+  </columns>
+
+  
+</grid>

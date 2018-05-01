@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grid>
+  <actions cssclass="action-items">
+    <action name="edit" externalsourcename="edit" commandargument="NodeID" caption="View" fonticonclass="fa fa-pencil-square-o" />
+  </actions>
+  <columns>
+    <column source="StartDate" caption="Dates" externalsourcename="#customDateFormat"/>
+    <column source="DocumentName" caption="Event" sort="DocumentName" wrap="true"/>
+    <column source="EventCategory" caption="Event Type" wrap="true" externalsourcename="#customEvent"/>
+    <column source="EventLocation" caption="Location" externalsourcename="#html"/>
+
+  </columns>
+
+</grid>

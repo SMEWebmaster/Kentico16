@@ -1,0 +1,3212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://TIMSSSSO/webservice" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://TIMSSSSO/webservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://TIMSSSSO/webservice">
+      <s:element name="SSOCustomerTokenIsValid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerTokenIsValidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSOCustomerTokenIsValidResult" type="tns:SSOCustomerTokenIsValidResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SSOCustomerTokenIsValidResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="Valid" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="NewCustomerToken" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TIMSSCustomerIdentifierGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TIMSSCustomerIdentifierGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TIMSSCustomerIdentifierGetResult" type="tns:TIMSSCustomerIdentifierGetResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TIMSSCustomerIdentifierGetResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerIdentifier" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TIMSSCustomerIdentifierSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TIMSSCustomerIdentifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TIMSSCustomerIdentifierSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TIMSSCustomerIdentifierSetResult" type="tns:VendorSSOCustomerIdentifierSetResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VendorSSOCustomerIdentifierSetResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerIdentifier" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="VendorSSOCustomerIdentifierGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VendorSSOCustomerIdentifierGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VendorSSOCustomerIdentifierGetResult" type="tns:VendorSSOCustomerIdentifierGetResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VendorSSOCustomerIdentifierGetResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerIdentifier" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="VendorSSOCustomerIdentifierSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VendorsSSOCustomerIdentifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VendorSSOCustomerIdentifierSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VendorSSOCustomerIdentifierSetResult" type="tns:VendorSSOCustomerIdentifierSetResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerLogout">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerLogoutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSOCustomerLogoutResult" type="tns:SSOCustomerLogoutResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SSOCustomerLogoutResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="VendorTokenEncrypt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorBlock" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VendorTokenEncryptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VendorTokenEncryptResult" type="tns:VendorTokenEncryptResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VendorTokenEncryptResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorToken" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CustomerTokenDecrypt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorBlock" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerTokenDecryptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerTokenDecryptResult" type="tns:CustomerTokenDecryptResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CustomerTokenDecryptResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerToken" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AuthorizeAccess">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="theVendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="theVendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="webServiceUri" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthorizeAccessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizeAccessResult" type="tns:AuthorizeAccessResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AuthorizeAccessResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SSOCustomerGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TIMSSCustomerId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSOCustomerGetResult" type="tns:SSOCustomerGetResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SSOCustomerGetResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UserExists" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DisableAccountFlag" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SSOCustomerGetByEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerGetByEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSOCustomerGetByEmailResult" type="tns:SSOCustomerGetResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerGetByUsername">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerGetByUsernameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSOCustomerGetByUsernameResult" type="tns:SSOCustomerGetResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerGetByCustomerToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerGetByCustomerTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSOCustomerGetByCustomerTokenResult" type="tns:SSOCustomerGetResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerRegisterWithRandomPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SSOCustomerTokenNeeded" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerRegisterWithRandomPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSOCustomerRegisterWithRandomPasswordResult" type="tns:SSOCustomerRegisterResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SSOCustomerRegisterResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="NewCustomerToken" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SSOCustomerRegister">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerRegisterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSOCustomerRegisterResult" type="tns:SSOCustomerRegisterResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerRegisterLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SSOCustomerTokenNeeded" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerRegisterLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSOCustomerRegisterLoginResult" type="tns:SSOCustomerRegisterResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerUpdateUserName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerEmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerUpdateUserNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSOCustomerUpdateUserNameResult" type="tns:SSOCustomerUpdateResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SSOCustomerUpdateResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SSOCustomerUpdateEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldEmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newEmailAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerUpdateEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSOCustomerUpdateEmailResult" type="tns:SSOCustomerUpdateResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerUpdatePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerEmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerUpdatePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSOCustomerUpdatePasswordResult" type="tns:SSOCustomerUpdateResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerAuthenticate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerAuthenticateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSOCustomerAuthenticateResult" type="tns:SSOCustomerAuthenticateResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SSOCustomerAuthenticateResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SSODeleteDuplicateCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DuplicateCustomerXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSODeleteDuplicateCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSODeleteDuplicateCustomerResult" type="tns:SSODeleteDuplicateCustomerResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SSODeleteDuplicateCustomerResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SSOCustomerDoesVendorCustomerExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerDoesVendorCustomerExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSOCustomerDoesVendorCustomerExistResult" type="tns:SSOVendorCustomerResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SSOVendorCustomerResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="VendorCustomerAlreadyExist" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorCustomerId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorUserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CustomerAuthenticateAndGetId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerAuthenticateAndGetIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerAuthenticateAndGetIdResult" type="tns:CustomerAuthenticateAndGetCustomerIdResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CustomerAuthenticateAndGetCustomerIdResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CustomerAuthenticateAndGetVendorCustomerId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerAuthenticateAndGetVendorCustomerIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerAuthenticateAndGetVendorCustomerIdResult" type="tns:CustomerAuthenticateAndGetCustomerIdResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerUpdateEmailByTimssID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldEmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newEmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TimssCustomerId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerUpdateEmailByTimssIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSOCustomerUpdateEmailByTimssIDResult" type="tns:SSOCustomerUpdateResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerUpdateEmailByUserName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newEmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerUpdateEmailByUserNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSOCustomerUpdateEmailByUserNameResult" type="tns:SSOCustomerUpdateResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerUpdateUserNameByTimssID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TimssCustomerId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerUpdateUserNameByTimssIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSOCustomerUpdateUserNameByTimssIDResult" type="tns:SSOCustomerUpdateResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerUpdatePasswordByTimssID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TimssCustomerId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerUpdatePasswordByTimssIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSOCustomerUpdatePasswordByTimssIDResult" type="tns:SSOCustomerUpdateResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerUpdatePasswordByUserName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerUpdatePasswordByUserNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSOCustomerUpdatePasswordByUserNameResult" type="tns:SSOCustomerUpdateResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOSendPasswordReset">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorIdentifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOSendPasswordResetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SSOSendPasswordResetResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOSendPasswordResetByUserName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorIdentifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOSendPasswordResetByUserNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SSOSendPasswordResetByUserNameResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOEnableDisableCustomerAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DisableFlagValue" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOEnableDisableCustomerAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSOEnableDisableCustomerAccountResult" type="tns:SSOCustomerUpdateResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerPasswordIsStrong">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerPasswordIsStrongResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSOCustomerPasswordIsStrongResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOCustomerTokenIsValidResult" nillable="true" type="tns:SSOCustomerTokenIsValidResult" />
+      <s:element name="TIMSSCustomerIdentifierGetResult" nillable="true" type="tns:TIMSSCustomerIdentifierGetResult" />
+      <s:element name="VendorSSOCustomerIdentifierSetResult" nillable="true" type="tns:VendorSSOCustomerIdentifierSetResult" />
+      <s:element name="VendorSSOCustomerIdentifierGetResult" nillable="true" type="tns:VendorSSOCustomerIdentifierGetResult" />
+      <s:element name="SSOCustomerLogoutResult" nillable="true" type="tns:SSOCustomerLogoutResult" />
+      <s:element name="VendorTokenEncryptResult" nillable="true" type="tns:VendorTokenEncryptResult" />
+      <s:element name="CustomerTokenDecryptResult" nillable="true" type="tns:CustomerTokenDecryptResult" />
+      <s:element name="AuthorizeAccessResult" nillable="true" type="tns:AuthorizeAccessResult" />
+      <s:element name="SSOCustomerGetResult" nillable="true" type="tns:SSOCustomerGetResult" />
+      <s:element name="SSOCustomerRegisterResult" nillable="true" type="tns:SSOCustomerRegisterResult" />
+      <s:element name="SSOCustomerUpdateResult" nillable="true" type="tns:SSOCustomerUpdateResult" />
+      <s:element name="SSOCustomerAuthenticateResult" nillable="true" type="tns:SSOCustomerAuthenticateResult" />
+      <s:element name="SSODeleteDuplicateCustomerResult" nillable="true" type="tns:SSODeleteDuplicateCustomerResult" />
+      <s:element name="SSOVendorCustomerResult" nillable="true" type="tns:SSOVendorCustomerResult" />
+      <s:element name="CustomerAuthenticateAndGetCustomerIdResult" nillable="true" type="tns:CustomerAuthenticateAndGetCustomerIdResult" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SSOCustomerTokenIsValidSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOCustomerTokenIsValid" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerTokenIsValidSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOCustomerTokenIsValidResponse" />
+  </wsdl:message>
+  <wsdl:message name="TIMSSCustomerIdentifierGetSoapIn">
+    <wsdl:part name="parameters" element="tns:TIMSSCustomerIdentifierGet" />
+  </wsdl:message>
+  <wsdl:message name="TIMSSCustomerIdentifierGetSoapOut">
+    <wsdl:part name="parameters" element="tns:TIMSSCustomerIdentifierGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="TIMSSCustomerIdentifierSetSoapIn">
+    <wsdl:part name="parameters" element="tns:TIMSSCustomerIdentifierSet" />
+  </wsdl:message>
+  <wsdl:message name="TIMSSCustomerIdentifierSetSoapOut">
+    <wsdl:part name="parameters" element="tns:TIMSSCustomerIdentifierSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="VendorSSOCustomerIdentifierGetSoapIn">
+    <wsdl:part name="parameters" element="tns:VendorSSOCustomerIdentifierGet" />
+  </wsdl:message>
+  <wsdl:message name="VendorSSOCustomerIdentifierGetSoapOut">
+    <wsdl:part name="parameters" element="tns:VendorSSOCustomerIdentifierGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="VendorSSOCustomerIdentifierSetSoapIn">
+    <wsdl:part name="parameters" element="tns:VendorSSOCustomerIdentifierSet" />
+  </wsdl:message>
+  <wsdl:message name="VendorSSOCustomerIdentifierSetSoapOut">
+    <wsdl:part name="parameters" element="tns:VendorSSOCustomerIdentifierSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerLogoutSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOCustomerLogout" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerLogoutSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOCustomerLogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="VendorTokenEncryptSoapIn">
+    <wsdl:part name="parameters" element="tns:VendorTokenEncrypt" />
+  </wsdl:message>
+  <wsdl:message name="VendorTokenEncryptSoapOut">
+    <wsdl:part name="parameters" element="tns:VendorTokenEncryptResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomerTokenDecryptSoapIn">
+    <wsdl:part name="parameters" element="tns:CustomerTokenDecrypt" />
+  </wsdl:message>
+  <wsdl:message name="CustomerTokenDecryptSoapOut">
+    <wsdl:part name="parameters" element="tns:CustomerTokenDecryptResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthorizeAccessSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthorizeAccess" />
+  </wsdl:message>
+  <wsdl:message name="AuthorizeAccessSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthorizeAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOCustomerGet" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOCustomerGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetByEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOCustomerGetByEmail" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetByEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOCustomerGetByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetByUsernameSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOCustomerGetByUsername" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetByUsernameSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOCustomerGetByUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetByCustomerTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOCustomerGetByCustomerToken" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetByCustomerTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOCustomerGetByCustomerTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerRegisterWithRandomPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOCustomerRegisterWithRandomPassword" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerRegisterWithRandomPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOCustomerRegisterWithRandomPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerRegisterSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOCustomerRegister" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerRegisterSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOCustomerRegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerRegisterLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOCustomerRegisterLogin" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerRegisterLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOCustomerRegisterLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateUserNameSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOCustomerUpdateUserName" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateUserNameSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOCustomerUpdateUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOCustomerUpdateEmail" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOCustomerUpdateEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdatePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOCustomerUpdatePassword" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdatePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOCustomerUpdatePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerAuthenticateSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOCustomerAuthenticate" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerAuthenticateSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOCustomerAuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSODeleteDuplicateCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:SSODeleteDuplicateCustomer" />
+  </wsdl:message>
+  <wsdl:message name="SSODeleteDuplicateCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:SSODeleteDuplicateCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerDoesVendorCustomerExistSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOCustomerDoesVendorCustomerExist" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerDoesVendorCustomerExistSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOCustomerDoesVendorCustomerExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomerAuthenticateAndGetIdSoapIn">
+    <wsdl:part name="parameters" element="tns:CustomerAuthenticateAndGetId" />
+  </wsdl:message>
+  <wsdl:message name="CustomerAuthenticateAndGetIdSoapOut">
+    <wsdl:part name="parameters" element="tns:CustomerAuthenticateAndGetIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomerAuthenticateAndGetVendorCustomerIdSoapIn">
+    <wsdl:part name="parameters" element="tns:CustomerAuthenticateAndGetVendorCustomerId" />
+  </wsdl:message>
+  <wsdl:message name="CustomerAuthenticateAndGetVendorCustomerIdSoapOut">
+    <wsdl:part name="parameters" element="tns:CustomerAuthenticateAndGetVendorCustomerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateEmailByTimssIDSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOCustomerUpdateEmailByTimssID" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateEmailByTimssIDSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOCustomerUpdateEmailByTimssIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateEmailByUserNameSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOCustomerUpdateEmailByUserName" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateEmailByUserNameSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOCustomerUpdateEmailByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateUserNameByTimssIDSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOCustomerUpdateUserNameByTimssID" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateUserNameByTimssIDSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOCustomerUpdateUserNameByTimssIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdatePasswordByTimssIDSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOCustomerUpdatePasswordByTimssID" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdatePasswordByTimssIDSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOCustomerUpdatePasswordByTimssIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdatePasswordByUserNameSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOCustomerUpdatePasswordByUserName" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdatePasswordByUserNameSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOCustomerUpdatePasswordByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOSendPasswordResetSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOSendPasswordReset" />
+  </wsdl:message>
+  <wsdl:message name="SSOSendPasswordResetSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOSendPasswordResetResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOSendPasswordResetByUserNameSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOSendPasswordResetByUserName" />
+  </wsdl:message>
+  <wsdl:message name="SSOSendPasswordResetByUserNameSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOSendPasswordResetByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOEnableDisableCustomerAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOEnableDisableCustomerAccount" />
+  </wsdl:message>
+  <wsdl:message name="SSOEnableDisableCustomerAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOEnableDisableCustomerAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerPasswordIsStrongSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOCustomerPasswordIsStrong" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerPasswordIsStrongSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOCustomerPasswordIsStrongResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerTokenIsValidHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="customerToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerTokenIsValidHttpGetOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerTokenIsValidResult" />
+  </wsdl:message>
+  <wsdl:message name="TIMSSCustomerIdentifierGetHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="customerToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TIMSSCustomerIdentifierGetHttpGetOut">
+    <wsdl:part name="Body" element="tns:TIMSSCustomerIdentifierGetResult" />
+  </wsdl:message>
+  <wsdl:message name="TIMSSCustomerIdentifierSetHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="TIMSSCustomerIdentifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TIMSSCustomerIdentifierSetHttpGetOut">
+    <wsdl:part name="Body" element="tns:VendorSSOCustomerIdentifierSetResult" />
+  </wsdl:message>
+  <wsdl:message name="VendorSSOCustomerIdentifierGetHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="customerToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VendorSSOCustomerIdentifierGetHttpGetOut">
+    <wsdl:part name="Body" element="tns:VendorSSOCustomerIdentifierGetResult" />
+  </wsdl:message>
+  <wsdl:message name="VendorSSOCustomerIdentifierSetHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="customerToken" type="s:string" />
+    <wsdl:part name="VendorsSSOCustomerIdentifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VendorSSOCustomerIdentifierSetHttpGetOut">
+    <wsdl:part name="Body" element="tns:VendorSSOCustomerIdentifierSetResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerLogoutHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="customerToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerLogoutHttpGetOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerLogoutResult" />
+  </wsdl:message>
+  <wsdl:message name="VendorTokenEncryptHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="vendorBlock" type="s:string" />
+    <wsdl:part name="url" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VendorTokenEncryptHttpGetOut">
+    <wsdl:part name="Body" element="tns:VendorTokenEncryptResult" />
+  </wsdl:message>
+  <wsdl:message name="CustomerTokenDecryptHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="vendorBlock" type="s:string" />
+    <wsdl:part name="customerToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CustomerTokenDecryptHttpGetOut">
+    <wsdl:part name="Body" element="tns:CustomerTokenDecryptResult" />
+  </wsdl:message>
+  <wsdl:message name="AuthorizeAccessHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="theVendorUsername" type="s:string" />
+    <wsdl:part name="theVendorPassword" type="s:string" />
+    <wsdl:part name="webServiceUri" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AuthorizeAccessHttpGetOut">
+    <wsdl:part name="Body" element="tns:AuthorizeAccessResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="TIMSSCustomerId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetHttpGetOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerGetResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetByEmailHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetByEmailHttpGetOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerGetResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetByUsernameHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetByUsernameHttpGetOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerGetResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetByCustomerTokenHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="customerToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetByCustomerTokenHttpGetOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerGetResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerRegisterWithRandomPasswordHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="newPassword" type="s:string" />
+    <wsdl:part name="emailAddress" type="s:string" />
+    <wsdl:part name="firstName" type="s:string" />
+    <wsdl:part name="lastName" type="s:string" />
+    <wsdl:part name="SSOCustomerTokenNeeded" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerRegisterWithRandomPasswordHttpGetOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerRegisterResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerRegisterHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="newPassword" type="s:string" />
+    <wsdl:part name="emailAddress" type="s:string" />
+    <wsdl:part name="firstName" type="s:string" />
+    <wsdl:part name="lastName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerRegisterHttpGetOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerRegisterResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerRegisterLoginHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="newPassword" type="s:string" />
+    <wsdl:part name="emailAddress" type="s:string" />
+    <wsdl:part name="firstName" type="s:string" />
+    <wsdl:part name="lastName" type="s:string" />
+    <wsdl:part name="SSOCustomerTokenNeeded" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerRegisterLoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerRegisterResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateUserNameHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="CustomerEmailAddress" type="s:string" />
+    <wsdl:part name="newUserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateUserNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerUpdateResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateEmailHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="oldEmailAddress" type="s:string" />
+    <wsdl:part name="newEmailAddress" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateEmailHttpGetOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerUpdateResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdatePasswordHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="CustomerEmailAddress" type="s:string" />
+    <wsdl:part name="newPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdatePasswordHttpGetOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerUpdateResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerAuthenticateHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerAuthenticateHttpGetOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerAuthenticateResult" />
+  </wsdl:message>
+  <wsdl:message name="SSODeleteDuplicateCustomerHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="DuplicateCustomerXML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSODeleteDuplicateCustomerHttpGetOut">
+    <wsdl:part name="Body" element="tns:SSODeleteDuplicateCustomerResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerDoesVendorCustomerExistHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerDoesVendorCustomerExistHttpGetOut">
+    <wsdl:part name="Body" element="tns:SSOVendorCustomerResult" />
+  </wsdl:message>
+  <wsdl:message name="CustomerAuthenticateAndGetIdHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="customerUserName" type="s:string" />
+    <wsdl:part name="customerPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CustomerAuthenticateAndGetIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:CustomerAuthenticateAndGetCustomerIdResult" />
+  </wsdl:message>
+  <wsdl:message name="CustomerAuthenticateAndGetVendorCustomerIdHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="customerUserName" type="s:string" />
+    <wsdl:part name="customerPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CustomerAuthenticateAndGetVendorCustomerIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:CustomerAuthenticateAndGetCustomerIdResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateEmailByTimssIDHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="oldEmailAddress" type="s:string" />
+    <wsdl:part name="newEmailAddress" type="s:string" />
+    <wsdl:part name="TimssCustomerId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateEmailByTimssIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerUpdateResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateEmailByUserNameHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="newEmailAddress" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateEmailByUserNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerUpdateResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateUserNameByTimssIDHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="newUserName" type="s:string" />
+    <wsdl:part name="TimssCustomerId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateUserNameByTimssIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerUpdateResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdatePasswordByTimssIDHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="TimssCustomerId" type="s:string" />
+    <wsdl:part name="newPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdatePasswordByTimssIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerUpdateResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdatePasswordByUserNameHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="newPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdatePasswordByUserNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerUpdateResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOSendPasswordResetHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="emailAddress" type="s:string" />
+    <wsdl:part name="vendorIdentifier" type="s:string" />
+    <wsdl:part name="vendorToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOSendPasswordResetHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SSOSendPasswordResetByUserNameHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="emailAddress" type="s:string" />
+    <wsdl:part name="vendorIdentifier" type="s:string" />
+    <wsdl:part name="vendorToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOSendPasswordResetByUserNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SSOEnableDisableCustomerAccountHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="DisableFlagValue" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOEnableDisableCustomerAccountHttpGetOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerUpdateResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerPasswordIsStrongHttpGetIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerPasswordIsStrongHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerTokenIsValidHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="customerToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerTokenIsValidHttpPostOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerTokenIsValidResult" />
+  </wsdl:message>
+  <wsdl:message name="TIMSSCustomerIdentifierGetHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="customerToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TIMSSCustomerIdentifierGetHttpPostOut">
+    <wsdl:part name="Body" element="tns:TIMSSCustomerIdentifierGetResult" />
+  </wsdl:message>
+  <wsdl:message name="TIMSSCustomerIdentifierSetHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="TIMSSCustomerIdentifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TIMSSCustomerIdentifierSetHttpPostOut">
+    <wsdl:part name="Body" element="tns:VendorSSOCustomerIdentifierSetResult" />
+  </wsdl:message>
+  <wsdl:message name="VendorSSOCustomerIdentifierGetHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="customerToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VendorSSOCustomerIdentifierGetHttpPostOut">
+    <wsdl:part name="Body" element="tns:VendorSSOCustomerIdentifierGetResult" />
+  </wsdl:message>
+  <wsdl:message name="VendorSSOCustomerIdentifierSetHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="customerToken" type="s:string" />
+    <wsdl:part name="VendorsSSOCustomerIdentifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VendorSSOCustomerIdentifierSetHttpPostOut">
+    <wsdl:part name="Body" element="tns:VendorSSOCustomerIdentifierSetResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerLogoutHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="customerToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerLogoutHttpPostOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerLogoutResult" />
+  </wsdl:message>
+  <wsdl:message name="VendorTokenEncryptHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="vendorBlock" type="s:string" />
+    <wsdl:part name="url" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VendorTokenEncryptHttpPostOut">
+    <wsdl:part name="Body" element="tns:VendorTokenEncryptResult" />
+  </wsdl:message>
+  <wsdl:message name="CustomerTokenDecryptHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="vendorBlock" type="s:string" />
+    <wsdl:part name="customerToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CustomerTokenDecryptHttpPostOut">
+    <wsdl:part name="Body" element="tns:CustomerTokenDecryptResult" />
+  </wsdl:message>
+  <wsdl:message name="AuthorizeAccessHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="theVendorUsername" type="s:string" />
+    <wsdl:part name="theVendorPassword" type="s:string" />
+    <wsdl:part name="webServiceUri" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AuthorizeAccessHttpPostOut">
+    <wsdl:part name="Body" element="tns:AuthorizeAccessResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="TIMSSCustomerId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetHttpPostOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerGetResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetByEmailHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetByEmailHttpPostOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerGetResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetByUsernameHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetByUsernameHttpPostOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerGetResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetByCustomerTokenHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="customerToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerGetByCustomerTokenHttpPostOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerGetResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerRegisterWithRandomPasswordHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="newPassword" type="s:string" />
+    <wsdl:part name="emailAddress" type="s:string" />
+    <wsdl:part name="firstName" type="s:string" />
+    <wsdl:part name="lastName" type="s:string" />
+    <wsdl:part name="SSOCustomerTokenNeeded" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerRegisterWithRandomPasswordHttpPostOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerRegisterResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerRegisterHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="newPassword" type="s:string" />
+    <wsdl:part name="emailAddress" type="s:string" />
+    <wsdl:part name="firstName" type="s:string" />
+    <wsdl:part name="lastName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerRegisterHttpPostOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerRegisterResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerRegisterLoginHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="newPassword" type="s:string" />
+    <wsdl:part name="emailAddress" type="s:string" />
+    <wsdl:part name="firstName" type="s:string" />
+    <wsdl:part name="lastName" type="s:string" />
+    <wsdl:part name="SSOCustomerTokenNeeded" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerRegisterLoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerRegisterResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateUserNameHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="CustomerEmailAddress" type="s:string" />
+    <wsdl:part name="newUserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateUserNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerUpdateResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateEmailHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="oldEmailAddress" type="s:string" />
+    <wsdl:part name="newEmailAddress" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateEmailHttpPostOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerUpdateResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdatePasswordHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="CustomerEmailAddress" type="s:string" />
+    <wsdl:part name="newPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdatePasswordHttpPostOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerUpdateResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerAuthenticateHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerAuthenticateHttpPostOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerAuthenticateResult" />
+  </wsdl:message>
+  <wsdl:message name="SSODeleteDuplicateCustomerHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="DuplicateCustomerXML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSODeleteDuplicateCustomerHttpPostOut">
+    <wsdl:part name="Body" element="tns:SSODeleteDuplicateCustomerResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerDoesVendorCustomerExistHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerDoesVendorCustomerExistHttpPostOut">
+    <wsdl:part name="Body" element="tns:SSOVendorCustomerResult" />
+  </wsdl:message>
+  <wsdl:message name="CustomerAuthenticateAndGetIdHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="customerUserName" type="s:string" />
+    <wsdl:part name="customerPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CustomerAuthenticateAndGetIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:CustomerAuthenticateAndGetCustomerIdResult" />
+  </wsdl:message>
+  <wsdl:message name="CustomerAuthenticateAndGetVendorCustomerIdHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="customerUserName" type="s:string" />
+    <wsdl:part name="customerPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CustomerAuthenticateAndGetVendorCustomerIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:CustomerAuthenticateAndGetCustomerIdResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateEmailByTimssIDHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="oldEmailAddress" type="s:string" />
+    <wsdl:part name="newEmailAddress" type="s:string" />
+    <wsdl:part name="TimssCustomerId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateEmailByTimssIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerUpdateResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateEmailByUserNameHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="newEmailAddress" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateEmailByUserNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerUpdateResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateUserNameByTimssIDHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="newUserName" type="s:string" />
+    <wsdl:part name="TimssCustomerId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdateUserNameByTimssIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerUpdateResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdatePasswordByTimssIDHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="TimssCustomerId" type="s:string" />
+    <wsdl:part name="newPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdatePasswordByTimssIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerUpdateResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdatePasswordByUserNameHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="newPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerUpdatePasswordByUserNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerUpdateResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOSendPasswordResetHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="emailAddress" type="s:string" />
+    <wsdl:part name="vendorIdentifier" type="s:string" />
+    <wsdl:part name="vendorToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOSendPasswordResetHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SSOSendPasswordResetByUserNameHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="emailAddress" type="s:string" />
+    <wsdl:part name="vendorIdentifier" type="s:string" />
+    <wsdl:part name="vendorToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOSendPasswordResetByUserNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SSOEnableDisableCustomerAccountHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="DisableFlagValue" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOEnableDisableCustomerAccountHttpPostOut">
+    <wsdl:part name="Body" element="tns:SSOCustomerUpdateResult" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerPasswordIsStrongHttpPostIn">
+    <wsdl:part name="vendorUsername" type="s:string" />
+    <wsdl:part name="vendorPassword" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SSOCustomerPasswordIsStrongHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="serviceSoap">
+    <wsdl:operation name="SSOCustomerTokenIsValid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Verifies that the Customer's token is valid.  Tokens are single use, therefore a new token will be returned if the provided token is valid.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerTokenIsValidSoapIn" />
+      <wsdl:output message="tns:SSOCustomerTokenIsValidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TIMSSCustomerIdentifierGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provides the TIMSS CustomerNumber.  Must be called with a valid Customer Token.  The TIMSS CustomerNumber is needed when calling the DataAccess web services to get more customer information. This would be normally called by a Vendor who does not have their own identifer for a customer via VendorSSOCustomerIdentifierGet.</wsdl:documentation>
+      <wsdl:input message="tns:TIMSSCustomerIdentifierGetSoapIn" />
+      <wsdl:output message="tns:TIMSSCustomerIdentifierGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TIMSSCustomerIdentifierSet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This allows the TIMSS Vendor to set TIMSS customer ID for SSO Customer.</wsdl:documentation>
+      <wsdl:input message="tns:TIMSSCustomerIdentifierSetSoapIn" />
+      <wsdl:output message="tns:TIMSSCustomerIdentifierSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VendorSSOCustomerIdentifierGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provides the Vendor's identifier for a customer.  Must be called with a valid Customer Token.</wsdl:documentation>
+      <wsdl:input message="tns:VendorSSOCustomerIdentifierGetSoapIn" />
+      <wsdl:output message="tns:VendorSSOCustomerIdentifierGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VendorSSOCustomerIdentifierSet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This allows the Vendor to determine how they identify a customer.  The identifier is simply a custom identifier which SSO will associate with this Customer for a particular Vendor.</wsdl:documentation>
+      <wsdl:input message="tns:VendorSSOCustomerIdentifierSetSoapIn" />
+      <wsdl:output message="tns:VendorSSOCustomerIdentifierSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerLogout">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This logs the customer out of SSO.  All Customer Tokens for this Customer will no longer be valid after they log out.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerLogoutSoapIn" />
+      <wsdl:output message="tns:SSOCustomerLogoutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VendorTokenEncrypt">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the encrypted Vendor token.  This method allows a Vendor to create a valid token without having to implement Rijndael encryption.</wsdl:documentation>
+      <wsdl:input message="tns:VendorTokenEncryptSoapIn" />
+      <wsdl:output message="tns:VendorTokenEncryptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerTokenDecrypt">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the decrypted Customer token. This method allows a Vendor to decrypt a Customer Token without having to implement Rijndael decryption.</wsdl:documentation>
+      <wsdl:input message="tns:CustomerTokenDecryptSoapIn" />
+      <wsdl:output message="tns:CustomerTokenDecryptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeAccess">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Authenticates a Vendor's credentials and then authorizes their access to a particular web service.</wsdl:documentation>
+      <wsdl:input message="tns:AuthorizeAccessSoapIn" />
+      <wsdl:output message="tns:AuthorizeAccessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns SSO Customer Information. This method allows a Vendor to retrieve SSO customer information by TIMSS Customer Id.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerGetSoapIn" />
+      <wsdl:output message="tns:SSOCustomerGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGetByEmail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns SSO Customer Information. This method allows a Vendor to retrieve SSO customer information by email address.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerGetByEmailSoapIn" />
+      <wsdl:output message="tns:SSOCustomerGetByEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGetByUsername">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns SSO Customer Information. This method allows a Vendor to retrieve SSO customer information by Username.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerGetByUsernameSoapIn" />
+      <wsdl:output message="tns:SSOCustomerGetByUsernameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGetByCustomerToken">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns SSO Customer Information. This method allows a Vendor to retrieve SSO customer information by Customer Token.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerGetByCustomerTokenSoapIn" />
+      <wsdl:output message="tns:SSOCustomerGetByCustomerTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerRegisterWithRandomPassword">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to register a Customer with SSO. Return False/Error Collection if fails, True and a new CustomerToken if LoginNeeded Parameter is True.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerRegisterWithRandomPasswordSoapIn" />
+      <wsdl:output message="tns:SSOCustomerRegisterWithRandomPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerRegister">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to register a Customer with SSO. Return False/Error Collection if fails, True and a new CustomerToken if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerRegisterSoapIn" />
+      <wsdl:output message="tns:SSOCustomerRegisterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerRegister">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to register a Customer with SSO. Return False/Error Collection if fails, True and a new CustomerToken if LoginNeeded Parameter is True.</wsdl:documentation>
+      <wsdl:input name="SSOCustomerRegisterLogin" message="tns:SSOCustomerRegisterLoginSoapIn" />
+      <wsdl:output name="SSOCustomerRegisterLogin" message="tns:SSOCustomerRegisterLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateUserName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer User Name. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdateUserNameSoapIn" />
+      <wsdl:output message="tns:SSOCustomerUpdateUserNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateEmail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer Email. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdateEmailSoapIn" />
+      <wsdl:output message="tns:SSOCustomerUpdateEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdatePassword">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer Password. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdatePasswordSoapIn" />
+      <wsdl:output message="tns:SSOCustomerUpdatePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerAuthenticate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to authenticate a Customer's credentials with SSO.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerAuthenticateSoapIn" />
+      <wsdl:output message="tns:SSOCustomerAuthenticateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSODeleteDuplicateCustomer">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete the Duplicate customer from the SSO DB. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSODeleteDuplicateCustomerSoapIn" />
+      <wsdl:output message="tns:SSODeleteDuplicateCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerDoesVendorCustomerExist">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns SSO Customer related data if customer belong to its vendor.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerDoesVendorCustomerExistSoapIn" />
+      <wsdl:output message="tns:SSOCustomerDoesVendorCustomerExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerAuthenticateAndGetId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Verifies that the customers credentials are valid. This function returns the TIMSS customer Identifier. </wsdl:documentation>
+      <wsdl:input message="tns:CustomerAuthenticateAndGetIdSoapIn" />
+      <wsdl:output message="tns:CustomerAuthenticateAndGetIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerAuthenticateAndGetVendorCustomerId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Verifies that the customers credentials are valid. This function returns the Vendor customer Identifier. </wsdl:documentation>
+      <wsdl:input message="tns:CustomerAuthenticateAndGetVendorCustomerIdSoapIn" />
+      <wsdl:output message="tns:CustomerAuthenticateAndGetVendorCustomerIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateEmailByTimssID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer Email. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdateEmailByTimssIDSoapIn" />
+      <wsdl:output message="tns:SSOCustomerUpdateEmailByTimssIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateEmailByUserName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer Email. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdateEmailByUserNameSoapIn" />
+      <wsdl:output message="tns:SSOCustomerUpdateEmailByUserNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateUserNameByTimssID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer User Name. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdateUserNameByTimssIDSoapIn" />
+      <wsdl:output message="tns:SSOCustomerUpdateUserNameByTimssIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdatePasswordByTimssID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer Password. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdatePasswordByTimssIDSoapIn" />
+      <wsdl:output message="tns:SSOCustomerUpdatePasswordByTimssIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdatePasswordByUserName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer Password. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdatePasswordByUserNameSoapIn" />
+      <wsdl:output message="tns:SSOCustomerUpdatePasswordByUserNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOSendPasswordReset">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Send Password Reset EMail based on Email Address. Use this function when EMail Addresses are unique.</wsdl:documentation>
+      <wsdl:input message="tns:SSOSendPasswordResetSoapIn" />
+      <wsdl:output message="tns:SSOSendPasswordResetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOSendPasswordResetByUserName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Send Password Reset EMail based on User Name and Email Address. Use this function if you allow users to share their email addresses.</wsdl:documentation>
+      <wsdl:input message="tns:SSOSendPasswordResetByUserNameSoapIn" />
+      <wsdl:output message="tns:SSOSendPasswordResetByUserNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOEnableDisableCustomerAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor enable or disable customer account. If DisableFlagValue is True, Account is disabled, if it is False, account is enabled.</wsdl:documentation>
+      <wsdl:input message="tns:SSOEnableDisableCustomerAccountSoapIn" />
+      <wsdl:output message="tns:SSOEnableDisableCustomerAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerPasswordIsStrong">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to validate SSO Customer Password. Return Error message if password is not strong.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerPasswordIsStrongSoapIn" />
+      <wsdl:output message="tns:SSOCustomerPasswordIsStrongSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="serviceHttpGet">
+    <wsdl:operation name="SSOCustomerTokenIsValid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Verifies that the Customer's token is valid.  Tokens are single use, therefore a new token will be returned if the provided token is valid.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerTokenIsValidHttpGetIn" />
+      <wsdl:output message="tns:SSOCustomerTokenIsValidHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TIMSSCustomerIdentifierGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provides the TIMSS CustomerNumber.  Must be called with a valid Customer Token.  The TIMSS CustomerNumber is needed when calling the DataAccess web services to get more customer information. This would be normally called by a Vendor who does not have their own identifer for a customer via VendorSSOCustomerIdentifierGet.</wsdl:documentation>
+      <wsdl:input message="tns:TIMSSCustomerIdentifierGetHttpGetIn" />
+      <wsdl:output message="tns:TIMSSCustomerIdentifierGetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TIMSSCustomerIdentifierSet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This allows the TIMSS Vendor to set TIMSS customer ID for SSO Customer.</wsdl:documentation>
+      <wsdl:input message="tns:TIMSSCustomerIdentifierSetHttpGetIn" />
+      <wsdl:output message="tns:TIMSSCustomerIdentifierSetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VendorSSOCustomerIdentifierGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provides the Vendor's identifier for a customer.  Must be called with a valid Customer Token.</wsdl:documentation>
+      <wsdl:input message="tns:VendorSSOCustomerIdentifierGetHttpGetIn" />
+      <wsdl:output message="tns:VendorSSOCustomerIdentifierGetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VendorSSOCustomerIdentifierSet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This allows the Vendor to determine how they identify a customer.  The identifier is simply a custom identifier which SSO will associate with this Customer for a particular Vendor.</wsdl:documentation>
+      <wsdl:input message="tns:VendorSSOCustomerIdentifierSetHttpGetIn" />
+      <wsdl:output message="tns:VendorSSOCustomerIdentifierSetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerLogout">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This logs the customer out of SSO.  All Customer Tokens for this Customer will no longer be valid after they log out.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerLogoutHttpGetIn" />
+      <wsdl:output message="tns:SSOCustomerLogoutHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VendorTokenEncrypt">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the encrypted Vendor token.  This method allows a Vendor to create a valid token without having to implement Rijndael encryption.</wsdl:documentation>
+      <wsdl:input message="tns:VendorTokenEncryptHttpGetIn" />
+      <wsdl:output message="tns:VendorTokenEncryptHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerTokenDecrypt">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the decrypted Customer token. This method allows a Vendor to decrypt a Customer Token without having to implement Rijndael decryption.</wsdl:documentation>
+      <wsdl:input message="tns:CustomerTokenDecryptHttpGetIn" />
+      <wsdl:output message="tns:CustomerTokenDecryptHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeAccess">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Authenticates a Vendor's credentials and then authorizes their access to a particular web service.</wsdl:documentation>
+      <wsdl:input message="tns:AuthorizeAccessHttpGetIn" />
+      <wsdl:output message="tns:AuthorizeAccessHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns SSO Customer Information. This method allows a Vendor to retrieve SSO customer information by TIMSS Customer Id.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerGetHttpGetIn" />
+      <wsdl:output message="tns:SSOCustomerGetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGetByEmail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns SSO Customer Information. This method allows a Vendor to retrieve SSO customer information by email address.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerGetByEmailHttpGetIn" />
+      <wsdl:output message="tns:SSOCustomerGetByEmailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGetByUsername">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns SSO Customer Information. This method allows a Vendor to retrieve SSO customer information by Username.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerGetByUsernameHttpGetIn" />
+      <wsdl:output message="tns:SSOCustomerGetByUsernameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGetByCustomerToken">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns SSO Customer Information. This method allows a Vendor to retrieve SSO customer information by Customer Token.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerGetByCustomerTokenHttpGetIn" />
+      <wsdl:output message="tns:SSOCustomerGetByCustomerTokenHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerRegisterWithRandomPassword">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to register a Customer with SSO. Return False/Error Collection if fails, True and a new CustomerToken if LoginNeeded Parameter is True.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerRegisterWithRandomPasswordHttpGetIn" />
+      <wsdl:output message="tns:SSOCustomerRegisterWithRandomPasswordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerRegister">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to register a Customer with SSO. Return False/Error Collection if fails, True and a new CustomerToken if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerRegisterHttpGetIn" />
+      <wsdl:output message="tns:SSOCustomerRegisterHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerRegister">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to register a Customer with SSO. Return False/Error Collection if fails, True and a new CustomerToken if LoginNeeded Parameter is True.</wsdl:documentation>
+      <wsdl:input name="SSOCustomerRegisterLogin" message="tns:SSOCustomerRegisterLoginHttpGetIn" />
+      <wsdl:output name="SSOCustomerRegisterLogin" message="tns:SSOCustomerRegisterLoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateUserName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer User Name. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdateUserNameHttpGetIn" />
+      <wsdl:output message="tns:SSOCustomerUpdateUserNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateEmail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer Email. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdateEmailHttpGetIn" />
+      <wsdl:output message="tns:SSOCustomerUpdateEmailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdatePassword">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer Password. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdatePasswordHttpGetIn" />
+      <wsdl:output message="tns:SSOCustomerUpdatePasswordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerAuthenticate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to authenticate a Customer's credentials with SSO.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerAuthenticateHttpGetIn" />
+      <wsdl:output message="tns:SSOCustomerAuthenticateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSODeleteDuplicateCustomer">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete the Duplicate customer from the SSO DB. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSODeleteDuplicateCustomerHttpGetIn" />
+      <wsdl:output message="tns:SSODeleteDuplicateCustomerHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerDoesVendorCustomerExist">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns SSO Customer related data if customer belong to its vendor.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerDoesVendorCustomerExistHttpGetIn" />
+      <wsdl:output message="tns:SSOCustomerDoesVendorCustomerExistHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerAuthenticateAndGetId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Verifies that the customers credentials are valid. This function returns the TIMSS customer Identifier. </wsdl:documentation>
+      <wsdl:input message="tns:CustomerAuthenticateAndGetIdHttpGetIn" />
+      <wsdl:output message="tns:CustomerAuthenticateAndGetIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerAuthenticateAndGetVendorCustomerId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Verifies that the customers credentials are valid. This function returns the Vendor customer Identifier. </wsdl:documentation>
+      <wsdl:input message="tns:CustomerAuthenticateAndGetVendorCustomerIdHttpGetIn" />
+      <wsdl:output message="tns:CustomerAuthenticateAndGetVendorCustomerIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateEmailByTimssID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer Email. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdateEmailByTimssIDHttpGetIn" />
+      <wsdl:output message="tns:SSOCustomerUpdateEmailByTimssIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateEmailByUserName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer Email. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdateEmailByUserNameHttpGetIn" />
+      <wsdl:output message="tns:SSOCustomerUpdateEmailByUserNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateUserNameByTimssID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer User Name. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdateUserNameByTimssIDHttpGetIn" />
+      <wsdl:output message="tns:SSOCustomerUpdateUserNameByTimssIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdatePasswordByTimssID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer Password. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdatePasswordByTimssIDHttpGetIn" />
+      <wsdl:output message="tns:SSOCustomerUpdatePasswordByTimssIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdatePasswordByUserName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer Password. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdatePasswordByUserNameHttpGetIn" />
+      <wsdl:output message="tns:SSOCustomerUpdatePasswordByUserNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOSendPasswordReset">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Send Password Reset EMail based on Email Address. Use this function when EMail Addresses are unique.</wsdl:documentation>
+      <wsdl:input message="tns:SSOSendPasswordResetHttpGetIn" />
+      <wsdl:output message="tns:SSOSendPasswordResetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOSendPasswordResetByUserName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Send Password Reset EMail based on User Name and Email Address. Use this function if you allow users to share their email addresses.</wsdl:documentation>
+      <wsdl:input message="tns:SSOSendPasswordResetByUserNameHttpGetIn" />
+      <wsdl:output message="tns:SSOSendPasswordResetByUserNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOEnableDisableCustomerAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor enable or disable customer account. If DisableFlagValue is True, Account is disabled, if it is False, account is enabled.</wsdl:documentation>
+      <wsdl:input message="tns:SSOEnableDisableCustomerAccountHttpGetIn" />
+      <wsdl:output message="tns:SSOEnableDisableCustomerAccountHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerPasswordIsStrong">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to validate SSO Customer Password. Return Error message if password is not strong.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerPasswordIsStrongHttpGetIn" />
+      <wsdl:output message="tns:SSOCustomerPasswordIsStrongHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="serviceHttpPost">
+    <wsdl:operation name="SSOCustomerTokenIsValid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Verifies that the Customer's token is valid.  Tokens are single use, therefore a new token will be returned if the provided token is valid.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerTokenIsValidHttpPostIn" />
+      <wsdl:output message="tns:SSOCustomerTokenIsValidHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TIMSSCustomerIdentifierGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provides the TIMSS CustomerNumber.  Must be called with a valid Customer Token.  The TIMSS CustomerNumber is needed when calling the DataAccess web services to get more customer information. This would be normally called by a Vendor who does not have their own identifer for a customer via VendorSSOCustomerIdentifierGet.</wsdl:documentation>
+      <wsdl:input message="tns:TIMSSCustomerIdentifierGetHttpPostIn" />
+      <wsdl:output message="tns:TIMSSCustomerIdentifierGetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TIMSSCustomerIdentifierSet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This allows the TIMSS Vendor to set TIMSS customer ID for SSO Customer.</wsdl:documentation>
+      <wsdl:input message="tns:TIMSSCustomerIdentifierSetHttpPostIn" />
+      <wsdl:output message="tns:TIMSSCustomerIdentifierSetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VendorSSOCustomerIdentifierGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provides the Vendor's identifier for a customer.  Must be called with a valid Customer Token.</wsdl:documentation>
+      <wsdl:input message="tns:VendorSSOCustomerIdentifierGetHttpPostIn" />
+      <wsdl:output message="tns:VendorSSOCustomerIdentifierGetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VendorSSOCustomerIdentifierSet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This allows the Vendor to determine how they identify a customer.  The identifier is simply a custom identifier which SSO will associate with this Customer for a particular Vendor.</wsdl:documentation>
+      <wsdl:input message="tns:VendorSSOCustomerIdentifierSetHttpPostIn" />
+      <wsdl:output message="tns:VendorSSOCustomerIdentifierSetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerLogout">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This logs the customer out of SSO.  All Customer Tokens for this Customer will no longer be valid after they log out.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerLogoutHttpPostIn" />
+      <wsdl:output message="tns:SSOCustomerLogoutHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VendorTokenEncrypt">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the encrypted Vendor token.  This method allows a Vendor to create a valid token without having to implement Rijndael encryption.</wsdl:documentation>
+      <wsdl:input message="tns:VendorTokenEncryptHttpPostIn" />
+      <wsdl:output message="tns:VendorTokenEncryptHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerTokenDecrypt">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the decrypted Customer token. This method allows a Vendor to decrypt a Customer Token without having to implement Rijndael decryption.</wsdl:documentation>
+      <wsdl:input message="tns:CustomerTokenDecryptHttpPostIn" />
+      <wsdl:output message="tns:CustomerTokenDecryptHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeAccess">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Authenticates a Vendor's credentials and then authorizes their access to a particular web service.</wsdl:documentation>
+      <wsdl:input message="tns:AuthorizeAccessHttpPostIn" />
+      <wsdl:output message="tns:AuthorizeAccessHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns SSO Customer Information. This method allows a Vendor to retrieve SSO customer information by TIMSS Customer Id.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerGetHttpPostIn" />
+      <wsdl:output message="tns:SSOCustomerGetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGetByEmail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns SSO Customer Information. This method allows a Vendor to retrieve SSO customer information by email address.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerGetByEmailHttpPostIn" />
+      <wsdl:output message="tns:SSOCustomerGetByEmailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGetByUsername">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns SSO Customer Information. This method allows a Vendor to retrieve SSO customer information by Username.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerGetByUsernameHttpPostIn" />
+      <wsdl:output message="tns:SSOCustomerGetByUsernameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGetByCustomerToken">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns SSO Customer Information. This method allows a Vendor to retrieve SSO customer information by Customer Token.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerGetByCustomerTokenHttpPostIn" />
+      <wsdl:output message="tns:SSOCustomerGetByCustomerTokenHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerRegisterWithRandomPassword">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to register a Customer with SSO. Return False/Error Collection if fails, True and a new CustomerToken if LoginNeeded Parameter is True.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerRegisterWithRandomPasswordHttpPostIn" />
+      <wsdl:output message="tns:SSOCustomerRegisterWithRandomPasswordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerRegister">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to register a Customer with SSO. Return False/Error Collection if fails, True and a new CustomerToken if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerRegisterHttpPostIn" />
+      <wsdl:output message="tns:SSOCustomerRegisterHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerRegister">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to register a Customer with SSO. Return False/Error Collection if fails, True and a new CustomerToken if LoginNeeded Parameter is True.</wsdl:documentation>
+      <wsdl:input name="SSOCustomerRegisterLogin" message="tns:SSOCustomerRegisterLoginHttpPostIn" />
+      <wsdl:output name="SSOCustomerRegisterLogin" message="tns:SSOCustomerRegisterLoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateUserName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer User Name. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdateUserNameHttpPostIn" />
+      <wsdl:output message="tns:SSOCustomerUpdateUserNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateEmail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer Email. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdateEmailHttpPostIn" />
+      <wsdl:output message="tns:SSOCustomerUpdateEmailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdatePassword">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer Password. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdatePasswordHttpPostIn" />
+      <wsdl:output message="tns:SSOCustomerUpdatePasswordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerAuthenticate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to authenticate a Customer's credentials with SSO.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerAuthenticateHttpPostIn" />
+      <wsdl:output message="tns:SSOCustomerAuthenticateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSODeleteDuplicateCustomer">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete the Duplicate customer from the SSO DB. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSODeleteDuplicateCustomerHttpPostIn" />
+      <wsdl:output message="tns:SSODeleteDuplicateCustomerHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerDoesVendorCustomerExist">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns SSO Customer related data if customer belong to its vendor.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerDoesVendorCustomerExistHttpPostIn" />
+      <wsdl:output message="tns:SSOCustomerDoesVendorCustomerExistHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerAuthenticateAndGetId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Verifies that the customers credentials are valid. This function returns the TIMSS customer Identifier. </wsdl:documentation>
+      <wsdl:input message="tns:CustomerAuthenticateAndGetIdHttpPostIn" />
+      <wsdl:output message="tns:CustomerAuthenticateAndGetIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerAuthenticateAndGetVendorCustomerId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Verifies that the customers credentials are valid. This function returns the Vendor customer Identifier. </wsdl:documentation>
+      <wsdl:input message="tns:CustomerAuthenticateAndGetVendorCustomerIdHttpPostIn" />
+      <wsdl:output message="tns:CustomerAuthenticateAndGetVendorCustomerIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateEmailByTimssID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer Email. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdateEmailByTimssIDHttpPostIn" />
+      <wsdl:output message="tns:SSOCustomerUpdateEmailByTimssIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateEmailByUserName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer Email. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdateEmailByUserNameHttpPostIn" />
+      <wsdl:output message="tns:SSOCustomerUpdateEmailByUserNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateUserNameByTimssID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer User Name. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdateUserNameByTimssIDHttpPostIn" />
+      <wsdl:output message="tns:SSOCustomerUpdateUserNameByTimssIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdatePasswordByTimssID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer Password. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdatePasswordByTimssIDHttpPostIn" />
+      <wsdl:output message="tns:SSOCustomerUpdatePasswordByTimssIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdatePasswordByUserName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to update SSO Customer Password. Return False/Error Collection if fails, True if successful.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerUpdatePasswordByUserNameHttpPostIn" />
+      <wsdl:output message="tns:SSOCustomerUpdatePasswordByUserNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOSendPasswordReset">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Send Password Reset EMail based on Email Address. Use this function when EMail Addresses are unique.</wsdl:documentation>
+      <wsdl:input message="tns:SSOSendPasswordResetHttpPostIn" />
+      <wsdl:output message="tns:SSOSendPasswordResetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOSendPasswordResetByUserName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Send Password Reset EMail based on User Name and Email Address. Use this function if you allow users to share their email addresses.</wsdl:documentation>
+      <wsdl:input message="tns:SSOSendPasswordResetByUserNameHttpPostIn" />
+      <wsdl:output message="tns:SSOSendPasswordResetByUserNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOEnableDisableCustomerAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor enable or disable customer account. If DisableFlagValue is True, Account is disabled, if it is False, account is enabled.</wsdl:documentation>
+      <wsdl:input message="tns:SSOEnableDisableCustomerAccountHttpPostIn" />
+      <wsdl:output message="tns:SSOEnableDisableCustomerAccountHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerPasswordIsStrong">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a Vendor to validate SSO Customer Password. Return Error message if password is not strong.</wsdl:documentation>
+      <wsdl:input message="tns:SSOCustomerPasswordIsStrongHttpPostIn" />
+      <wsdl:output message="tns:SSOCustomerPasswordIsStrongHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="serviceSoap" type="tns:serviceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SSOCustomerTokenIsValid">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerTokenIsValid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TIMSSCustomerIdentifierGet">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/TIMSSCustomerIdentifierGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TIMSSCustomerIdentifierSet">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/TIMSSCustomerIdentifierSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VendorSSOCustomerIdentifierGet">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/VendorSSOCustomerIdentifierGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VendorSSOCustomerIdentifierSet">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/VendorSSOCustomerIdentifierSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerLogout">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerLogout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VendorTokenEncrypt">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/VendorTokenEncrypt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerTokenDecrypt">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/CustomerTokenDecrypt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeAccess">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/AuthorizeAccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGet">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGetByEmail">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerGetByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGetByUsername">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerGetByUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGetByCustomerToken">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerGetByCustomerToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerRegisterWithRandomPassword">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerRegisterWithRandomPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerRegister">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerRegister" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerRegister">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerRegisterLogin" style="document" />
+      <wsdl:input name="SSOCustomerRegisterLogin">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SSOCustomerRegisterLogin">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateUserName">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerUpdateUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateEmail">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerUpdateEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdatePassword">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerUpdatePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerAuthenticate">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerAuthenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSODeleteDuplicateCustomer">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSODeleteDuplicateCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerDoesVendorCustomerExist">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerDoesVendorCustomerExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerAuthenticateAndGetId">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/CustomerAuthenticateAndGetId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerAuthenticateAndGetVendorCustomerId">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/CustomerAuthenticateAndGetVendorCustomerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateEmailByTimssID">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerUpdateEmailByTimssID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateEmailByUserName">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerUpdateEmailByUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateUserNameByTimssID">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerUpdateUserNameByTimssID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdatePasswordByTimssID">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerUpdatePasswordByTimssID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdatePasswordByUserName">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerUpdatePasswordByUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOSendPasswordReset">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOSendPasswordReset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOSendPasswordResetByUserName">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOSendPasswordResetByUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOEnableDisableCustomerAccount">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOEnableDisableCustomerAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerPasswordIsStrong">
+      <soap:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerPasswordIsStrong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="serviceSoap12" type="tns:serviceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SSOCustomerTokenIsValid">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerTokenIsValid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TIMSSCustomerIdentifierGet">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/TIMSSCustomerIdentifierGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TIMSSCustomerIdentifierSet">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/TIMSSCustomerIdentifierSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VendorSSOCustomerIdentifierGet">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/VendorSSOCustomerIdentifierGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VendorSSOCustomerIdentifierSet">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/VendorSSOCustomerIdentifierSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerLogout">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerLogout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VendorTokenEncrypt">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/VendorTokenEncrypt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerTokenDecrypt">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/CustomerTokenDecrypt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeAccess">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/AuthorizeAccess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGet">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGetByEmail">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerGetByEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGetByUsername">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerGetByUsername" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGetByCustomerToken">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerGetByCustomerToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerRegisterWithRandomPassword">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerRegisterWithRandomPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerRegister">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerRegister" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerRegister">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerRegisterLogin" style="document" />
+      <wsdl:input name="SSOCustomerRegisterLogin">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SSOCustomerRegisterLogin">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateUserName">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerUpdateUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateEmail">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerUpdateEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdatePassword">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerUpdatePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerAuthenticate">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerAuthenticate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSODeleteDuplicateCustomer">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSODeleteDuplicateCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerDoesVendorCustomerExist">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerDoesVendorCustomerExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerAuthenticateAndGetId">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/CustomerAuthenticateAndGetId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerAuthenticateAndGetVendorCustomerId">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/CustomerAuthenticateAndGetVendorCustomerId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateEmailByTimssID">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerUpdateEmailByTimssID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateEmailByUserName">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerUpdateEmailByUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateUserNameByTimssID">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerUpdateUserNameByTimssID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdatePasswordByTimssID">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerUpdatePasswordByTimssID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdatePasswordByUserName">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerUpdatePasswordByUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOSendPasswordReset">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOSendPasswordReset" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOSendPasswordResetByUserName">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOSendPasswordResetByUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOEnableDisableCustomerAccount">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOEnableDisableCustomerAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerPasswordIsStrong">
+      <soap12:operation soapAction="http://TIMSSSSO/webservice/SSOCustomerPasswordIsStrong" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="serviceHttpGet" type="tns:serviceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="SSOCustomerTokenIsValid">
+      <http:operation location="/SSOCustomerTokenIsValid" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TIMSSCustomerIdentifierGet">
+      <http:operation location="/TIMSSCustomerIdentifierGet" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TIMSSCustomerIdentifierSet">
+      <http:operation location="/TIMSSCustomerIdentifierSet" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VendorSSOCustomerIdentifierGet">
+      <http:operation location="/VendorSSOCustomerIdentifierGet" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VendorSSOCustomerIdentifierSet">
+      <http:operation location="/VendorSSOCustomerIdentifierSet" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerLogout">
+      <http:operation location="/SSOCustomerLogout" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VendorTokenEncrypt">
+      <http:operation location="/VendorTokenEncrypt" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerTokenDecrypt">
+      <http:operation location="/CustomerTokenDecrypt" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeAccess">
+      <http:operation location="/AuthorizeAccess" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGet">
+      <http:operation location="/SSOCustomerGet" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGetByEmail">
+      <http:operation location="/SSOCustomerGetByEmail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGetByUsername">
+      <http:operation location="/SSOCustomerGetByUsername" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGetByCustomerToken">
+      <http:operation location="/SSOCustomerGetByCustomerToken" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerRegisterWithRandomPassword">
+      <http:operation location="/SSOCustomerRegisterWithRandomPassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerRegister">
+      <http:operation location="/SSOCustomerRegister" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerRegister">
+      <http:operation location="/SSOCustomerRegisterLogin" />
+      <wsdl:input name="SSOCustomerRegisterLogin">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="SSOCustomerRegisterLogin">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateUserName">
+      <http:operation location="/SSOCustomerUpdateUserName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateEmail">
+      <http:operation location="/SSOCustomerUpdateEmail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdatePassword">
+      <http:operation location="/SSOCustomerUpdatePassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerAuthenticate">
+      <http:operation location="/SSOCustomerAuthenticate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSODeleteDuplicateCustomer">
+      <http:operation location="/SSODeleteDuplicateCustomer" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerDoesVendorCustomerExist">
+      <http:operation location="/SSOCustomerDoesVendorCustomerExist" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerAuthenticateAndGetId">
+      <http:operation location="/CustomerAuthenticateAndGetId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerAuthenticateAndGetVendorCustomerId">
+      <http:operation location="/CustomerAuthenticateAndGetVendorCustomerId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateEmailByTimssID">
+      <http:operation location="/SSOCustomerUpdateEmailByTimssID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateEmailByUserName">
+      <http:operation location="/SSOCustomerUpdateEmailByUserName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateUserNameByTimssID">
+      <http:operation location="/SSOCustomerUpdateUserNameByTimssID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdatePasswordByTimssID">
+      <http:operation location="/SSOCustomerUpdatePasswordByTimssID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdatePasswordByUserName">
+      <http:operation location="/SSOCustomerUpdatePasswordByUserName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOSendPasswordReset">
+      <http:operation location="/SSOSendPasswordReset" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOSendPasswordResetByUserName">
+      <http:operation location="/SSOSendPasswordResetByUserName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOEnableDisableCustomerAccount">
+      <http:operation location="/SSOEnableDisableCustomerAccount" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerPasswordIsStrong">
+      <http:operation location="/SSOCustomerPasswordIsStrong" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="serviceHttpPost" type="tns:serviceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="SSOCustomerTokenIsValid">
+      <http:operation location="/SSOCustomerTokenIsValid" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TIMSSCustomerIdentifierGet">
+      <http:operation location="/TIMSSCustomerIdentifierGet" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TIMSSCustomerIdentifierSet">
+      <http:operation location="/TIMSSCustomerIdentifierSet" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VendorSSOCustomerIdentifierGet">
+      <http:operation location="/VendorSSOCustomerIdentifierGet" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VendorSSOCustomerIdentifierSet">
+      <http:operation location="/VendorSSOCustomerIdentifierSet" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerLogout">
+      <http:operation location="/SSOCustomerLogout" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VendorTokenEncrypt">
+      <http:operation location="/VendorTokenEncrypt" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerTokenDecrypt">
+      <http:operation location="/CustomerTokenDecrypt" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeAccess">
+      <http:operation location="/AuthorizeAccess" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGet">
+      <http:operation location="/SSOCustomerGet" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGetByEmail">
+      <http:operation location="/SSOCustomerGetByEmail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGetByUsername">
+      <http:operation location="/SSOCustomerGetByUsername" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerGetByCustomerToken">
+      <http:operation location="/SSOCustomerGetByCustomerToken" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerRegisterWithRandomPassword">
+      <http:operation location="/SSOCustomerRegisterWithRandomPassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerRegister">
+      <http:operation location="/SSOCustomerRegister" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerRegister">
+      <http:operation location="/SSOCustomerRegisterLogin" />
+      <wsdl:input name="SSOCustomerRegisterLogin">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="SSOCustomerRegisterLogin">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateUserName">
+      <http:operation location="/SSOCustomerUpdateUserName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateEmail">
+      <http:operation location="/SSOCustomerUpdateEmail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdatePassword">
+      <http:operation location="/SSOCustomerUpdatePassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerAuthenticate">
+      <http:operation location="/SSOCustomerAuthenticate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSODeleteDuplicateCustomer">
+      <http:operation location="/SSODeleteDuplicateCustomer" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerDoesVendorCustomerExist">
+      <http:operation location="/SSOCustomerDoesVendorCustomerExist" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerAuthenticateAndGetId">
+      <http:operation location="/CustomerAuthenticateAndGetId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerAuthenticateAndGetVendorCustomerId">
+      <http:operation location="/CustomerAuthenticateAndGetVendorCustomerId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateEmailByTimssID">
+      <http:operation location="/SSOCustomerUpdateEmailByTimssID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateEmailByUserName">
+      <http:operation location="/SSOCustomerUpdateEmailByUserName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdateUserNameByTimssID">
+      <http:operation location="/SSOCustomerUpdateUserNameByTimssID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdatePasswordByTimssID">
+      <http:operation location="/SSOCustomerUpdatePasswordByTimssID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerUpdatePasswordByUserName">
+      <http:operation location="/SSOCustomerUpdatePasswordByUserName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOSendPasswordReset">
+      <http:operation location="/SSOSendPasswordReset" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOSendPasswordResetByUserName">
+      <http:operation location="/SSOSendPasswordResetByUserName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOEnableDisableCustomerAccount">
+      <http:operation location="/SSOEnableDisableCustomerAccount" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOCustomerPasswordIsStrong">
+      <http:operation location="/SSOCustomerPasswordIsStrong" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="service">
+    <wsdl:port name="serviceSoap" binding="tns:serviceSoap">
+      <soap:address location="http://smemitst.personifycloud.com/SSO/webservice/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="serviceSoap12" binding="tns:serviceSoap12">
+      <soap12:address location="http://smemitst.personifycloud.com/SSO/webservice/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="serviceHttpGet" binding="tns:serviceHttpGet">
+      <http:address location="http://smemitst.personifycloud.com/SSO/webservice/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="serviceHttpPost" binding="tns:serviceHttpPost">
+      <http:address location="http://smemitst.personifycloud.com/SSO/webservice/service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

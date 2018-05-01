@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="20f937aa-a0b7-4b10-ba81-1ffe10155bbe" xmlns="urn:schemas-microsoft-com:xml-dataservicemap">
+  <MetadataSources>
+    <MetadataSource Address="http://smemitst.personifycloud.com/PersonifyDataServices/PersonifyData.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.edmx" MetadataType="Edmx" ID="06c48e62-ff5e-4627-89e6-cf53e686a3a0" SourceId="1" SourceUrl="http://smemitst.personifycloud.com/PersonifyDataServices/PersonifyData.svc" />
+  </Metadata>
+  <Extensions />
+  <Parameters />
+</ReferenceGroup>
